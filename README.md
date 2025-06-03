@@ -2,16 +2,16 @@
 
 ## Table of Contents
 - [HBNB - Part 1 Technical Documentation](#hbnb---part-1)
-  - [Table of Contents] (#Table of Contents)
-  - [High-Level Package Diagram](#High-Level Package Diagram)
-  - [Detailed Class Diagram for Business Logic Layer](#Detailed Class Diagram for Business Logic Layer)
-  - [Sequence Diagrams for API Calls](#Sequence Diagrams for API Calls)
-	- [Register Sequence Diagram](#Register Sequence Diagram)
-	- [Login Sequence Diagram](#Login Sequence Diagram)
-	- [Place Sequence Diagram](#Place Sequence Diagram)
-	- [Review Sequence Diagram](#Review Sequence Diagram)
+  - [Table of Contents] (##Table of Contents)
+  - [High-Level Package Diagram](##High-Level Package Diagram)
+  - [Detailed Class Diagram for Business Logic Layer](##Detailed Class Diagram for Business Logic Layer)
+  - [Sequence Diagrams for API Calls](##Sequence Diagrams for API Calls)
+	- [Register Sequence Diagram](###Register Sequence Diagram)
+	- [Login Sequence Diagram](###Login Sequence Diagram)
+	- [Place Sequence Diagram](###Place Sequence Diagram)
+	- [Review Sequence Diagram](###Review Sequence Diagram)
 
-  - [Documentation Compilation](#Documentation Compilation)
+  - [Documentation Compilation](##Documentation Compilation)
   - [Authors](#authors)
 
 ## Description
