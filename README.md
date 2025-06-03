@@ -7,7 +7,7 @@
   - [Part 3](#part-3)
   - [Part 4](#part-4)
   - [Part 5](#part-5)
-  - [Part 6](#Login-Sequence-Diagram)
+  - [Part 6](#part-6)
   - [Authors](#authors)
 
 ## Description
