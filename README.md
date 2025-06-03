@@ -1,7 +1,7 @@
-# HBNB - Part 1 Technical Documentation
+# HBnB - Part 1 Technical Documentation
 
 ## Table of Contents
-- [HBNB - Part 1 Technical Documentation](#hbnb---part-1)
+- [HBnB - Part 1 Technical Documentation](#hbnb---part-1)
   - [Table of Contents](#table-of-contents)
   - [High-Level Package Diagram](#High-Level-Package-Diagram)
   - [Detailed Class Diagram for Business Logic Layer](#Detailed-Class-Diagram-for-Business-Logic-Layer)
@@ -15,7 +15,7 @@
   - [Authors](#authors)
 
 ## Description
-HBNB is a web application that allows users to manage and book places. This project is part of the Holberton School curriculum and focuses on implementing a full-stack web application.
+HBnB is a web application that allows users to manage and book places. This project is part of the Holberton School curriculum and focuses on implementing a full-stack web application.
 
 ## High-Level Package Diagram
 
