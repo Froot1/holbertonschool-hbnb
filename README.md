@@ -1,62 +1,33 @@
 # HBnB - Project
-This is a team project is part of the Holberton School Full-Stack Software Engineer program. It's the first step towards building our first full web application: simplified version of an AirBnB-like application. This first step consists of a custom command-line interface for data management and the base classes for the storage of this data.
-
 ## Table of Contents
-- [HBnB - Part 1 Technical Documentation](#hbnb---part-1)
+- [HBnB - Project](#hbnb-project)
   - [Table of Contents](#table-of-contents)
-  - [High-Level Package Diagram](#High-Level-Package-Diagram)
-  - [Detailed Class Diagram for Business Logic Layer](#Detailed-Class-Diagram-for-Business-Logic-Layer)
-  - [Sequence Diagrams for API Calls](#Sequence-Diagrams-for-API-Calls)
-	- [Register Sequence Diagram](#Register-Sequence-Diagram)
-	- [Login Sequence Diagram](#Login-Sequence-Diagram)
-	- [Place Sequence Diagram](#Place-Sequence-Diagram)
-	- [Review Sequence Diagram](#Review-Sequence-Diagram)
-
-  - [Documentation Compilation](#Documentation-Compilation)
+  - [Part 1](#part-1)
+  - [Part 2](#part-2)
+  - [Part 3](#part-3)
+  - [Part 4](#part-4)
+  - [Part 5](#part-5)
+  - [Part 6](#Login-Sequence-Diagram)
   - [Authors](#authors)
 
 ## Description
 
 This is a team project is part of the Holberton School Full-Stack Software Engineer program. It's the first step towards building our first full web application: simplified version of an AirBnB-like application. This first step consists of a custom command-line interface for data management and the base classes for the storage of this data.
 
-## High-Level Package Diagram
-
-image
-
-## Detailed Class Diagram for Business Logic Layer
-The following diagram represents the Use, Place, Review, and Amenity entities. Each entity is a key part of the system, with attributes and methods that manage the business logic Operations
-
-image
+## Part 1
+Comprehensive technical documentation
 
 
-## Sequence Diagrams for API Calls
+## Part 2
 
-### Register Sequence Diagram
+## Part 3
 
-The following diagram represents the Register Sequence
+## Part 4
 
-image
+## Part 5
 
-### Login Sequence Diagram
+## Part 6
 
-The following diagram represents the Login Sequence
-
-image
-
-### Place Sequence Diagram
-
-The following diagram represents the Place Sequence
-
-image
-
-### Review Sequence Diagram
-
-The following diagram represents the Review Sequence
-
-image
-
-### Documentation
-Compile all the diagrams and explanatory notes created in the previous tasks into a comprehensive technical document. This document will serve as a detailed blueprint for the HBnB project, guiding the implementation phases and providing a clear reference for the systems architecture and design.
 
 
 ## Authors
