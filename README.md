@@ -2,7 +2,7 @@
 
 ## Table of Contents
 - [HBNB - Part 1 Technical Documentation](#hbnb---part-1)
-  - [Table of Contents] (#table-of-contents)
+  - [Table of Contents](#table-of-contents)
   - [High-Level Package Diagram](#High-Level-Package-Diagram)
   - [Detailed Class Diagram for Business Logic Layer](#Detailed-Class-Diagram-for-Business-Logic-Layer)
   - [Sequence Diagrams for API Calls](#Sequence-Diagrams-for-API-Calls)
