@@ -1,4 +1,5 @@
-# HBnB - Part 1 Technical Documentation
+# HBnB - Project
+This is a team project is part of the Holberton School Full-Stack Software Engineer program. It's the first step towards building our first full web application: simplified version of an AirBnB-like application. This first step consists of a custom command-line interface for data management and the base classes for the storage of this data.
 
 ## Table of Contents
 - [HBnB - Part 1 Technical Documentation](#hbnb---part-1)
@@ -15,7 +16,8 @@
   - [Authors](#authors)
 
 ## Description
-HBnB is a web application that allows users to manage and book places. This project is part of the Holberton School curriculum and focuses on implementing a full-stack web application.
+
+This is a team project is part of the Holberton School Full-Stack Software Engineer program. It's the first step towards building our first full web application: simplified version of an AirBnB-like application. This first step consists of a custom command-line interface for data management and the base classes for the storage of this data.
 
 ## High-Level Package Diagram
 
