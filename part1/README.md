@@ -33,7 +33,7 @@ The following diagram represents the Use, Place, Review, and Amenity entities. E
 
 The following diagram represents the Register Sequence
 
-image
+![Image](https://github.com/user-attachments/assets/1fd5c3b7-9cf5-489e-ba98-cb7f7156d052)
 
 ### Login Sequence Diagram
 
