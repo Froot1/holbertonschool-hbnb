@@ -11,7 +11,7 @@
 	- [Place Sequence Diagram](#Place-Sequence-Diagram)
 	- [Review Sequence Diagram](#Review-Sequence-Diagram)
 
-  - [Documentation Compilation](#Documentation-Compilation)
+  - [Documentation Compilation](#documentation)
   - [Authors](#authors)
 
 ## Description
