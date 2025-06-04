@@ -19,7 +19,7 @@ HBnB is a web application that allows users to manage and book places. This proj
 
 ## High-Level Package Diagram
 
-image
+![Image](https://github.com/user-attachments/assets/643d2d71-8ecc-4fb8-840c-8d6c880099fc)
 
 ## Detailed Class Diagram for Business Logic Layer
 The following diagram represents the Use, Place, Review, and Amenity entities. Each entity is a key part of the system, with attributes and methods that manage the business logic Operations
