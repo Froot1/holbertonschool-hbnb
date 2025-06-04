@@ -56,6 +56,7 @@ The following diagram represents the Review Sequence
 ### Documentation
 Compile all the diagrams and explanatory notes created in the previous tasks into a comprehensive technical document. This document will serve as a detailed blueprint for the HBnB project, guiding the implementation phases and providing a clear reference for the systems architecture and design.
 
+[Documentation Compilation.pdf](https://github.com/user-attachments/files/20600108/Documentation.Compilation.pdf)
 
 ## Authors
 - **Fahad Alonazi** - [GitHub](https://github.com/Froot1)
