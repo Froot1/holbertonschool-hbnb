@@ -39,19 +39,19 @@ The following diagram represents the Register Sequence
 
 The following diagram represents the Login Sequence
 
-image
+![Image](https://github.com/user-attachments/assets/55030e5e-a733-4dd8-a54c-8c5d7a3aac61)
 
 ### Place Sequence Diagram
 
 The following diagram represents the Place Sequence
 
-image
+![Image](https://github.com/user-attachments/assets/1356bec0-f1cc-4337-ba57-88222a901712)
 
 ### Review Sequence Diagram
 
 The following diagram represents the Review Sequence
 
-image
+![Image](https://github.com/user-attachments/assets/ee536dd5-9ce3-449e-961b-518aa1bf03de)
 
 ### Documentation
 Compile all the diagrams and explanatory notes created in the previous tasks into a comprehensive technical document. This document will serve as a detailed blueprint for the HBnB project, guiding the implementation phases and providing a clear reference for the systems architecture and design.
