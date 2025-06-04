@@ -1,1 +1,22 @@
-insert code here
+---
+config:
+  theme: redux-color
+---
+sequenceDiagram
+    participant User
+    participant API
+    participant BusinessLogic
+    participant Database
+
+    User->>API: POST | Login (email, password)
+    API->>BusinessLogic: login()
+    BusinessLogic->>Database: Get user by email
+    Database-->>BusinessLogic: Return user details
+    BusinessLogic->>BusinessLogic: Verify password (compare hash)
+    alt Password correct
+        BusinessLogic-->>API: Return JWT token or session
+        API-->>User: Login successful (token/session)
+    else Password incorrect
+        BusinessLogic-->>API: Return error (Invalid credentials)
+        API-->>User: Login failed (Invalid credentials)
+    end
