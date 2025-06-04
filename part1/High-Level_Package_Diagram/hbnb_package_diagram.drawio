@@ -1,0 +1,63 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" version="27.1.1">
+  <diagram name="Page-1" id="nI-9GTP6WhDnTkqiH8FR">
+    <mxGraphModel dx="4094" dy="1586" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="#2AEEFF" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sbIyoxVxpuIZIKQkDNuO-82" value="&lt;h4&gt;HBnB: High-Level Package Diagram&amp;nbsp;&lt;/h4&gt;" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=214;height=20;swimlaneFillColor=none;fillColor=#DBDBDB;strokeColor=#666666;shadow=1;textShadow=0;fontColor=#333333;fillStyle=auto;" parent="1" vertex="1">
+          <mxGeometry x="-1654" width="764" height="470" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-1" value="Presentation" style="shape=folder;fontStyle=1;tabWidth=130;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#A9C4EB;textShadow=1;shadow=1;" vertex="1" parent="sbIyoxVxpuIZIKQkDNuO-82">
+          <mxGeometry x="39" y="40" width="150" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-2" value="Service API" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=21;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;textShadow=1;" vertex="1" parent="nFNwq8uXUWflqzHWdMpk-1">
+          <mxGeometry x="10" y="30" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-3" value="+ UserController&lt;div&gt;+ Place&lt;span style=&quot;background-color: initial;&quot;&gt;Controller&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ Review&lt;span style=&quot;background-color: initial;&quot;&gt;Controller&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ Amenity&lt;span style=&quot;background-color: initial;&quot;&gt;Controller&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;textShadow=1;" vertex="1" parent="nFNwq8uXUWflqzHWdMpk-2">
+          <mxGeometry y="21" width="130" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;endArrow=open;endFill=0;curved=0;flowAnimation=1;entryX=0.48;entryY=0.013;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.987;exitY=0.526;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="sbIyoxVxpuIZIKQkDNuO-82" source="nFNwq8uXUWflqzHWdMpk-6" target="nFNwq8uXUWflqzHWdMpk-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="459" y="253" as="sourcePoint" />
+            <mxPoint x="660" y="295" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="651" y="238" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-10" value="Database Operations&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];textShadow=1;" connectable="0" vertex="1" parent="nFNwq8uXUWflqzHWdMpk-9">
+          <mxGeometry x="-0.0826" relative="1" as="geometry">
+            <mxPoint x="-19" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-6" value="Business Logic" style="shape=folder;fontStyle=1;tabWidth=130;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;textShadow=1;shadow=1;" vertex="1" parent="sbIyoxVxpuIZIKQkDNuO-82">
+          <mxGeometry x="300" y="170" width="150" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-7" value="Model Classes" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=21;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;textShadow=1;" vertex="1" parent="nFNwq8uXUWflqzHWdMpk-6">
+          <mxGeometry x="10" y="30" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-8" value="+ UserModel&lt;div&gt;+ PlaceModel&lt;/div&gt;&lt;div&gt;+ ReviewModel&lt;/div&gt;&lt;div&gt;+ AmenityModel&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;textShadow=1;" vertex="1" parent="nFNwq8uXUWflqzHWdMpk-7">
+          <mxGeometry y="21" width="130" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-11" value="Persistence" style="shape=folder;fontStyle=1;tabWidth=130;tabHeight=20;tabPosition=left;html=1;boundedLbl=1;labelInHeader=1;container=1;collapsible=0;recursiveResize=0;whiteSpace=wrap;fillColor=#ffe6cc;strokeColor=#d79b00;textShadow=1;shadow=1;" vertex="1" parent="sbIyoxVxpuIZIKQkDNuO-82">
+          <mxGeometry x="579" y="297" width="150" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-12" value="DatabaseAccess" style="swimlane;fontStyle=1;align=center;verticalAlign=middle;childLayout=stackLayout;horizontal=1;startSize=21;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#ffe6cc;strokeColor=#d79b00;swimlaneFillColor=none;rounded=0;shadow=0;glass=0;swimlaneLine=1;textShadow=1;" vertex="1" parent="nFNwq8uXUWflqzHWdMpk-11">
+          <mxGeometry x="10" y="30" width="130" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-13" value="+ UserAcces&lt;div&gt;+ PlaceAcces&lt;/div&gt;&lt;div&gt;+ ReviewAcces&lt;/div&gt;&lt;div&gt;+ AmenityAcces&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;textShadow=1;" vertex="1" parent="nFNwq8uXUWflqzHWdMpk-12">
+          <mxGeometry y="21" width="130" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-18" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=150;exitDy=75;exitPerimeter=0;entryX=0;entryY=0;entryDx=65;entryDy=0;entryPerimeter=0;endArrow=open;endFill=0;flowAnimation=1;strokeColor=#000000;curved=0;shadow=1;" edge="1" parent="sbIyoxVxpuIZIKQkDNuO-82" source="nFNwq8uXUWflqzHWdMpk-1" target="nFNwq8uXUWflqzHWdMpk-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="nFNwq8uXUWflqzHWdMpk-19" value="Facade Pattern&amp;nbsp;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="nFNwq8uXUWflqzHWdMpk-18">
+          <mxGeometry x="-0.3102" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+
