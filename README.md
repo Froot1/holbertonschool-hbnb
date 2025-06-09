@@ -1,4 +1,4 @@
-# HBnB - Project
+# 🏠HBnB - Project
 ## Table of Contents
 - [HBnB - Project](#hbnb-project)
   - [Table of Contents](#table-of-contents)
