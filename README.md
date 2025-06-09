@@ -1,5 +1,5 @@
-# 🏠HBnB - Project
-## Table of Contents
+# :house_with_garden: HBnB - Project
+## :clipboard: Table of Contents
 - [HBnB - Project](#hbnb-project)
   - [Table of Contents](#table-of-contents)
   - [Part 1](#part-1)
@@ -10,27 +10,27 @@
   - [Part 6](#part-6)
   - [Authors](#authors)
 
-## Description
+## :clipboard: Description
 
 This is a team project is part of the Holberton School Full-Stack Software Engineer program. It's the first step towards building our first full web application: simplified version of an AirBnB-like application. This first step consists of a custom command-line interface for data management and the base classes for the storage of this data.
 
-## Part 1
+## :one: Part 1
 Comprehensive technical documentation
 
 
-## Part 2
+## :two: Part 2
 
-## Part 3
+## :three: Part 3
 
-## Part 4
+## :four: Part 4
 
-## Part 5
+## :five: Part 5
 
-## Part 6
+## :six: Part 6
 
 
 
-## Authors
+## :black_nib: Authors
 - **Fahad Alonazi** - [GitHub](https://github.com/Froot1)
 - **Abdullatif Alzaher** - [GitHub](https://github.com/)
 - **Abdulaziz Jumaiah** - [GitHub](https://github.com/)
