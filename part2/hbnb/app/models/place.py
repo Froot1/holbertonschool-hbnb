@@ -1,7 +1,7 @@
 from app.models.base_model import BaseModel
 
 class Place(BaseModel):
-    def __init__(self, title, description, price, latitude, longitude, owner):
+    def __init__(self, title, description, price, latitude, longitude, owner, amenities=None):
         super().__init__()
         if not title or len(title) > 100:
             raise ValueError("Title is required and must be under 100 characters")
@@ -17,7 +17,7 @@ class Place(BaseModel):
         self.price = price
         self.latitude = latitude
         self.longitude = longitude
-        self.owner = owner  # User object
+        self.owner = owner
         self.reviews = []
         self.amenities = []
 
@@ -26,3 +26,4 @@ class Place(BaseModel):
 
     def add_amenity(self, amenity):
         self.amenities.append(amenity)
+
