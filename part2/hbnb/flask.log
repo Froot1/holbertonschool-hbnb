@@ -1,0 +1,49 @@
+nohup: ignoring input
+ * Serving Flask app 'app'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 520-328-261
+127.0.0.1 - - [18/Jun/2025 13:45:26] "[33mHEAD / HTTP/1.1[0m" 404 -
+127.0.0.1 - - [18/Jun/2025 13:45:46] "[35m[1mPOST /api/v1/users/ HTTP/1.1[0m" 500 -
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/usr/local/lib/python3.10/dist-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask_restx/api.py", line 671, in error_router
+    return original_handler(f)
+  File "/usr/local/lib/python3.10/dist-packages/flask_restx/api.py", line 669, in error_router
+    return self.handle_error(e)
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.10/dist-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/usr/local/lib/python3.10/dist-packages/flask_restx/api.py", line 402, in wrapper
+    resp = resource(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/flask/views.py", line 110, in view
+    return current_app.ensure_sync(self.dispatch_request)(**kwargs)  # type: ignore[no-any-return]
+  File "/usr/local/lib/python3.10/dist-packages/flask_restx/resource.py", line 41, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "/root/holbertonschool-hbnb/part2/hbnb/app/api/v1/users.py", line 22, in post
+    user = facade.create_user(user_data)
+  File "/root/holbertonschool-hbnb/part2/hbnb/app/services/facade.py", line 11, in create_user
+    user = User(**user_data)
+NameError: name 'User' is not defined
+ * Detected change in '/root/holbertonschool-hbnb/part2/hbnb/app/services/facade.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 520-328-261
+127.0.0.1 - - [18/Jun/2025 13:47:49] "[35m[1mPOST /api/v1/users/ HTTP/1.1[0m" 201 -
+127.0.0.1 - - [18/Jun/2025 13:48:17] "GET /api/v1/users/8772258a-873e-40f7-92ec-f80365e9dc4e HTTP/1.1" 200 -
