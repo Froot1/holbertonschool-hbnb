@@ -21,6 +21,12 @@ class HBnBFacade:
     def get_all_users(self):
         return self.user_repo.get_all()
 
+    def update_user(self, user_id, data):
+        if "email" in data and "@" not in data["email"]:
+            raise ValueError("A valid email is required")
+
+        return self.user_repo.update(user_id, data)
+
     def get_user_by_email(self, email):
         return self.user_repo.get_by_attribute('email', email)
 
