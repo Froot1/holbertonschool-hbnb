@@ -42,7 +42,7 @@ Open your web browser and navigate to `http://localhost:5000/api/v1/` to access 
 
 ## File Structure
 ```
-part2/hbnb/
+part2/
 ├── api
 │   ├── __init__.py
 │   ├── v1
