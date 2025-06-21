@@ -43,27 +43,33 @@ Open your web browser and navigate to `http://localhost:5000/api/v1/` to access 
 ## File Structure
 ```
 part2/
-├── api
+├── app/
 │   ├── __init__.py
-│   ├── v1
+│   ├── api
 │   │   ├── __init__.py
-│   │   ├── amenities.py
-│   │   ├── places.py
-│   │   ├── reviews.py
-│   │   └── users.py
-├── models
-│   ├── __init__.py
-│   ├── base.py
-│   ├── amenity.py
-│   ├── place.py
-│   ├── review.py
-│   └── user.py
-├── persistence
-│   ├── __init__.py
-│   └── repository.py
-├── services
-│   ├── __init__.py
-│   └── facade.py
+│   │   ├── v1
+│   │   │   ├── __init__.py
+│   │   │   ├── amenities.py
+│   │   │   ├── places.py
+│   │   │   ├── reviews.py
+│   │   │   └── users.py
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── amenity.py
+│   │   ├── base.py
+│   │   ├── place.py
+│   │   ├── review.py
+│   │   └── user.py
+│   ├── persistence
+│   │   ├── __init__.py
+│   │   └── repository.py
+│   ├── services
+│   │   ├── __init__.py
+│   │   └── facade.py
+├── tests/
+│   ├── test_models.py
+├── README.md
+├── Tests.md
 ├── config.py
 ├── requirements.txt
 └── run.py
