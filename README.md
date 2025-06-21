@@ -2,8 +2,8 @@
 ## :clipboard: Table of Contents
 - [HBnB - Project](#hbnb-project)
   - [Table of Contents](#table-of-contents)
-  - [Part 1](#part1)
-  - [Part 2](#part2)
+  - [Part 1](#one-part-1)
+  - [Part 2](#part-2)
   - [Part 3](#part-3)
   - [Part 4](#part-4)
   - [Part 5](#part-5)
