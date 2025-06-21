@@ -1,7 +1,0 @@
-nohup: ignoring input
-Traceback (most recent call last):
-  File "/root/holbertonschool-hbnb/part2/hbnb/run.py", line 1, in <module>
-    from app import create_app
-  File "/root/holbertonschool-hbnb/part2/hbnb/app/__init__.py", line 4, in <module>
-    from app.api.vi.amenity import api as amenities_ns
-ModuleNotFoundError: No module named 'app.api.vi'
