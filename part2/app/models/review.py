@@ -12,17 +12,39 @@ class Review(BaseModel):
             self,
             text,
             rating,
-            place,
-            user):
+            place=None,
+            user=None,
+            place_id=None,
+            user_id=None):
         """
         Initialize a review.
+        Accepts either Place/User objects or their IDs.
         """
         super().__init__()
 
         self.text = text
         self.rating = rating
-        self.place = place
-        self.user = user
+
+        # Allow initialization with either object or ID
+        if place is not None:
+            self.place = place
+            self.place_id = place.id if hasattr(place, "id") else None
+        elif place_id is not None:
+            self.place_id = place_id
+            self.__place = None
+        else:
+            self.place_id = None
+            self.__place = None
+
+        if user is not None:
+            self.user = user
+            self.user_id = user.id if hasattr(user, "id") else None
+        elif user_id is not None:
+            self.user_id = user_id
+            self.__user = None
+        else:
+            self.user_id = None
+            self.__user = None
 
     @property
     def text(self):
