@@ -8,7 +8,7 @@
   - [Usage](#usage)
   - [File Structure](#file-structure)
   - [Explanation](#explanation)
-	- [user](#user)
+	- [User](#user)
     - [Amenity](#amenity)
     - [Places](#places)
     - [Reviews](#reviews)
