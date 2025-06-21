@@ -1,14 +1,14 @@
 # :house_with_garden: HBnB - Project
 ## :clipboard: Table of Contents
-- [HBnB - Project](#hbnb-project)
-  - [Table of Contents](#table-of-contents)
+- [HBnB - Project](#house_with_garden-hbnb-project)
+  - [Table of Contents](#clipboard-table-of-contents)
   - [Part 1](#one-part-1)
-  - [Part 2](#part-2)
-  - [Part 3](#part-3)
-  - [Part 4](#part-4)
+  - [Part 2](#two-part-2)
+  - [Part 3](#three-part-3)
+  - [Part 4](#four-part-4)
   - [Part 5](#part-5)
   - [Part 6](#part-6)
-  - [Authors](#authors)
+  - [Authors](#black_nib-authors)
 
 ## :clipboard: Description
 
