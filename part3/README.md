@@ -4,11 +4,11 @@ In this part, we continue building our HBnB project by implementing:
 
 ## Objectives 
 
-1- Authentication and Authorization.
-2- Database Integration.
-3- CRUD Operations with Database Persistence.
-4- Database Design and Visualization.
-5- Data Consistency and Validation.
+- 1- Authentication and Authorization.
+- 2- Database Integration.
+- 3- CRUD Operations with Database Persistence.
+- 4- Database Design and Visualization.
+- 5- Data Consistency and Validation.
 
 
 ## Features
