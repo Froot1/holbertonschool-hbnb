@@ -6,8 +6,6 @@
   - [Part 2](#two-part-2)
   - [Part 3](#three-part-3)
   - [Part 4](#four-part-4)
-  - [Part 5](#part-5)
-  - [Part 6](#part-6)
   - [Authors](#black_nib-authors)
 
 ## :clipboard: Description
@@ -16,19 +14,17 @@ This is a team project is part of the Holberton School Full-Stack Software Engin
 
 ## :one: Part 1
 
-Comprehensive technical documentation
+Comprehensive technical documentation.
 
 ## :two: Part 2
 
-Implementation of Business Logic and API Endpoints
+Implementation of Business Logic and API Endpoints.
 
 ## :three: Part 3
 
+Enhanced Backend with Authentication and Database Integration.
+
 ## :four: Part 4
-
-## :five: Part 5
-
-## :six: Part 6
 
 
 
