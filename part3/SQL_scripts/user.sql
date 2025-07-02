@@ -1,4 +1,4 @@
-CREATE TABLE user (
+CREATE TABLE users (
     id UUID PRIMARY KEY,
     _first_name VARCHAR(255),
     _last_name VARCHAR(255),
