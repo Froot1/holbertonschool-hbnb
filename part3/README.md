@@ -10,7 +10,6 @@ In this part, we continue building our HBnB project by implementing:
 - 4- Database Design and Visualization.
 - 5- Data Consistency and Validation.
 
-
 ## Features
 
 - Full integration of database storage and file storage systems.
