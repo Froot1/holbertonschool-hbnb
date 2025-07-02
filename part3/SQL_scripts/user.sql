@@ -4,7 +4,7 @@ CREATE TABLE users (
     _last_name VARCHAR(255),
     _email VARCHAR(255) UNIQUE,
     _password VARCHAR(255),
-    _is_admin BOOLEAN DEFAULT FALSE
+    _is_admin BOOLEAN DEFAULT FALSE,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
