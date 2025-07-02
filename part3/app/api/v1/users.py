@@ -163,4 +163,3 @@ class UserResource(Resource):
             return {'error': str(e)}, 400
 
         return {'message': 'User successfully deleted.'}, 200
-
