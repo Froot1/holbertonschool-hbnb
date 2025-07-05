@@ -23,12 +23,9 @@ class AmenityList(Resource):
     def post(self):
         """Register a new amenity"""
         # Trust no one
-        current_user = get_jwt_identity()
-        if current_user.get('is_admin') is True:
-            is_admin = facade.get_user(current_user['id']).is_admin
-            if not is_admin:
-                return {'error': 'Admin privileges required.'}, 403
-        else:
+        current_user_id = get_jwt_identity()
+        user = facade.get_user(current_user_id)
+        if not user or not user.is_admin:
             return {'error': 'Admin privileges required.'}, 403
 
         amenity_data = api.payload
@@ -76,12 +73,9 @@ class AmenityResource(Resource):
     @jwt_required()
     def put(self, amenity_id):
         """Update an amenity's information"""
-        current_user = get_jwt_identity()
-        if current_user.get('is_admin') is True:
-            is_admin = facade.get_user(current_user['id']).is_admin
-            if not is_admin:
-                return {'error': 'Admin privileges required.'}, 403
-        else:
+        current_user_id = get_jwt_identity()
+        user = facade.get_user(current_user_id)
+        if not user or not user.is_admin:
             return {'error': 'Admin privileges required.'}, 403
 
         amenity_data = api.payload
@@ -100,12 +94,9 @@ class AmenityResource(Resource):
     @jwt_required()
     def delete(self, amenity_id):
         """Delete an amenity"""
-        current_user = get_jwt_identity()
-        if current_user.get('is_admin') is True:
-            is_admin = facade.get_user(current_user['id']).is_admin
-            if not is_admin:
-                return {'error': 'Admin privileges required.'}, 403
-        else:
+        current_user_id = get_jwt_identity()
+        user = facade.get_user(current_user_id)
+        if not user or not user.is_admin:
             return {'error': 'Admin privileges required.'}, 403
 
         amenity = facade.get_amenity(amenity_id)
@@ -113,3 +104,4 @@ class AmenityResource(Resource):
             return {'error': 'Amenity not found.'}, 404
         facade.delete_amenity(amenity_id)
         return {'message': 'Amenity deleted successfully.'}, 204
+
