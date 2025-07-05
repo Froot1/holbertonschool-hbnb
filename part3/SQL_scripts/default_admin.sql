@@ -3,6 +3,6 @@ INSERT INTO users (id, _email, _first_name, _last_name, _password, _is_admin) VA
     'admin@hbnb.io',
     'Admin',
     'HBnb',
-    '$2a$12$wGeZPOMDMWdXvvdPpSL1uuF0dda.LWx7Hjmxn327orXfR4/ff/xJe',
+    '$2b$13$fFUPXhLCJjtfkV4JBQu2oOCvD6/Z21UpN1jtaj4yjeg.5ffY20O5S',
     TRUE
 );
