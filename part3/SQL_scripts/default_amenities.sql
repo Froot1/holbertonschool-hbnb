@@ -1,4 +1,3 @@
-INSERT INTO amenities (id, _name) VALUES ('ad6cbba4-33c9-48e3-b6ee-d494ee5a6b45', 'WiFi');
-INSERT INTO amenities (id, _name) VALUES ('ad6cbba4-33c9-48e3-b6ee-d494ee5a6b46', 'Swimming Pool');
-INSERT INTO amenities (id, _name) VALUES ('0b8744c5-5c58-4c4a-8467-48392e306e28', 'Air Conditioning');
-
+INSERT INTO amenities (id, _name) VALUES ('3046daee-447b-4ec3-bdf5-a0d64ab3fa09', 'WiFi');
+INSERT INTO amenities (id, _name) VALUES ('70524377-cb08-4903-8555-78bcd3db1a4c', 'Swimming Pool');
+INSERT INTO amenities (id, _name) VALUES ('65c4986a-4404-47aa-a726-d90827b61e83', 'Air Conditioning');
