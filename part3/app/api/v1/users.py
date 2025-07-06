@@ -1,5 +1,5 @@
 from flask_restx import Namespace, Resource, fields
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 
 from app.services import facade
 
@@ -36,23 +36,12 @@ class UserList(Resource):
     def post(self):
         """Register a new user"""
         # Trust no one
-        current_user = get_jwt_identity()
-        is_admin = False
-        user_id = None
-        if isinstance(current_user, dict):
-            is_admin = current_user.get('is_admin', False)
-            user_id = current_user.get('id')
-        elif isinstance(current_user, str):
-            # Try to fetch user by id or email
-            user = facade.get_user(current_user) or facade.get_user_by_email(current_user)
-            if user:
-                is_admin = getattr(user, 'is_admin', False)
-                user_id = getattr(user, 'id', None)
-        if is_admin:
-            if user_id:
-                admin_user = facade.get_user(user_id)
-                if not getattr(admin_user, 'is_admin', False):
-                    return {'error': 'Admin privileges required.'}, 403
+        current_user_id = get_jwt_identity()
+        claims = get_jwt()
+        if claims.get('is_admin') is True:
+            is_admin = facade.get_user(current_user_id).is_admin
+            if not is_admin:
+                return {'error': 'Admin privileges required.'}, 403
         else:
             return {'error': 'Admin privileges required.'}, 403
 
@@ -115,30 +104,21 @@ class UserResource(Resource):
                 return {'error': 'Invalid input data.'}, 400
 
         # Trust no one
-        current_user = get_jwt_identity()
-        is_admin = False
-        user_id_jwt = None
-        if isinstance(current_user, dict):
-            is_admin = current_user.get('is_admin', False)
-            user_id_jwt = current_user.get('id')
-        elif isinstance(current_user, str):
-            user = facade.get_user(current_user) or facade.get_user_by_email(current_user)
-            if user:
-                is_admin = getattr(user, 'is_admin', False)
-                user_id_jwt = getattr(user, 'id', None)
-        if is_admin:
+        current_user_id = get_jwt_identity()
+        claims = get_jwt()
+        if claims.get('is_admin') is True:
+            is_admin = facade.get_user(current_user_id).is_admin
+            if not is_admin:
+                return {'error': 'Admin privileges required.'}, 403
+
             if user_data.get('email'):
                 if facade.get_user_by_email(user_data['email']):
                     return {'error': 'Email already registered.'}, 400
         else:
-            if isinstance(current_user, dict):
-                if user_data.get('email') or user_data.get('password'):
-                    return {'error': 'You cannot modify email or password.'}, 403
+            if user_data.get('email') or user_data.get('password'):
+                return {'error': 'You cannot modify email or password.'}, 403
 
-                if user_id_jwt != user_id:
-                    return {'error': 'Unauthorized action.'}, 403
-            else:
-                # current_user is not a dict, treat as unauthorized
+            if current_user_id != user_id:
                 return {'error': 'Unauthorized action.'}, 403
 
         if not facade.get_user(user_id):
@@ -158,25 +138,14 @@ class UserResource(Resource):
     def delete(self, user_id):
         """Delete user"""
         # Trust no one
-        current_user = get_jwt_identity()
-        is_admin = False
-        user_id_jwt = None
-        if isinstance(current_user, dict):
-            is_admin = current_user.get('is_admin', False)
-            user_id_jwt = current_user.get('id')
-        elif isinstance(current_user, str):
-            user = facade.get_user(current_user) or facade.get_user_by_email(current_user)
-            if user:
-                is_admin = getattr(user, 'is_admin', False)
-                user_id_jwt = getattr(user, 'id', None)
-        if is_admin:
-            pass
+        current_user_id = get_jwt_identity()
+        claims = get_jwt()
+        if claims.get('is_admin') is True:
+            is_admin = facade.get_user(current_user_id).is_admin
+            if not is_admin:
+                return {'error': 'Admin privileges required.'}, 403
         else:
-            if isinstance(current_user, dict):
-                if user_id_jwt != user_id:
-                    return {'error': 'Unauthorized action.'}, 403
-            else:
-                # current_user is not a dict, treat as unauthorized
+            if current_user_id != user_id:
                 return {'error': 'Unauthorized action.'}, 403
 
         if not facade.get_user(user_id):
