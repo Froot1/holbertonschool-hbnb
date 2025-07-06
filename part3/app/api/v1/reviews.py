@@ -1,5 +1,5 @@
 from flask_restx import Namespace, Resource, fields
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 
 from app.services import facade
 
@@ -34,14 +34,11 @@ class ReviewList(Resource):
     @jwt_required()
     def post(self):
         """Register a new review"""
-        current_user = get_jwt_identity()
+        user_id = get_jwt_identity()
         review_data = api.payload
-        if current_user.get('is_admin') is True:
-            is_admin = facade.get_user(current_user['id']).is_admin
-            if not is_admin:
-                return {'error': 'Admin privileges required.'}, 403
-        else:
-            if current_user['id'] != review_data['user_id']:
+        user = facade.get_user(user_id)
+        if not (user and user.is_admin):
+            if user_id != review_data['user_id']:
                 return {'error': 'You cannot review your own place.'}, 400
 
         place = facade.get_place(review_data['place_id'])
@@ -52,10 +49,11 @@ class ReviewList(Resource):
         if user is None:
             return {'error': 'Invalid user_id.'}, 400
 
-        if user.id in [review.user_id for review in place.reviews]:
+        reviews_for_place = facade.get_reviews_by_place(review_data['place_id'])
+        if any(r.user_id == user.id for r in reviews_for_place):
             return {'error': 'You have already reviewed this place.'}, 400
 
-        if current_user['id'] != place.owner_id:
+        if user_id == place.owner_id:
             return {'error': 'Unauthorized action.'}, 403
 
         try:
@@ -107,21 +105,25 @@ class ReviewResource(Resource):
     @jwt_required()
     def put(self, review_id):
         """Update a review's information"""
-        current_user = get_jwt_identity()
+        user_id = get_jwt_identity()
+        review = facade.get_review(review_id)
+        if review is None:
+            return {'error': 'Review not found.'}, 404
+
         review_data = api.payload
+        allowed_keys = ['text', 'rating', 'user_id', 'place_id']
         for key in review_data:
-            if key not in ['text', 'rating', 'user_id', 'place_id']:
-                return {'error': 'Invalid input data.'}, 400
+            if key not in allowed_keys:
+                return {'error': f"Invalid key in input data: '{key}'"}, 400
 
-        if current_user['id'] != review_data['user_id']:
-            return {'error': 'Invalid input data.'}, 400
+        user = facade.get_user(user_id)
+        if not (user and user.is_admin):
+            if user_id != review_data['user_id']:
+                return {'error': f"user_id mismatch: JWT user_id '{user_id}' does not match payload user_id '{review_data['user_id']}'"}, 400
 
-        review = facade.get_reviews_by_place(review_data['place_id'])
-        if review.owner_id != current_user['id']:
-            return {'error': 'Unauthorized action.'}, 403
+        
 
-        if review_data is facade.get_review(review_id):
-            return {'error': 'Invalid input data.'}, 400
+        
 
         try:
             facade.update_review(review_id, review_data)
@@ -135,12 +137,9 @@ class ReviewResource(Resource):
     def delete(self, review_id):
         """Delete a review"""
         # Trust no one
-        current_user = get_jwt_identity()
-        if current_user.get('is_admin') is True:
-            is_admin = facade.get_user(current_user['id']).is_admin
-            if not is_admin:
-                return {'error': 'Admin privileges required.'}, 403
-        else:
+        user_id = get_jwt_identity()
+        user = facade.get_user(user_id)
+        if not (user and user.is_admin):
             return {'error': 'Admin privileges required.'}, 403
 
         if facade.get_review(review_id):
