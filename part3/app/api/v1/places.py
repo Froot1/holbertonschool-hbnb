@@ -1,5 +1,5 @@
 from flask_restx import Namespace, Resource, fields
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from flask_jwt_extended import jwt_required, get_jwt_identity, get_jwt
 
 from app.services import facade
 
@@ -89,19 +89,28 @@ class PlaceList(Resource):
     @jwt_required()
     def post(self):
         """Register a new place"""
-        current_user = get_jwt_identity()
+        current_user_id = get_jwt_identity()
+        claims = get_jwt()
         place_data = api.payload
         user = facade.get_user(place_data.get('owner_id'))
         if user is None:
             return {'error': 'Invalid owner_id.'}, 400
 
-        if current_user['id'] != user.id:
+        if not (claims.get('is_admin') is True or current_user_id == user.id):
             return {'error': 'Unauthorized action.'}, 403
 
         if place_data.get('amenities'):
+            amenity_instances = []
             for amenity in place_data.get('amenities'):
-                if facade.get_amenity(amenity['id']) is None:
+                amenity_instance = facade.get_amenity(amenity['id'])
+                if amenity_instance is None:
                     return {'error': 'Invalid amenity ID.'}, 400
+                amenity_instances.append(amenity_instance)
+            place_data['amenities'] = amenity_instances
+
+        # Remove 'reviews' from place_data if present, as reviews should not be set on creation
+        if 'reviews' in place_data:
+            del place_data['reviews']
 
         try:
             place = facade.create_place(place_data)
@@ -138,9 +147,9 @@ class PlaceResource(Resource):
     def get(self, place_id):
         """Get place details by ID"""
         place = facade.get_place(place_id)
-        owner = facade.get_user(place.owner_id)
         if place:
-            {
+            owner = facade.get_user(place.owner_id)
+            return {
                 'id': place.id,
                 'title': place.title,
                 'description': place.description,
@@ -152,7 +161,7 @@ class PlaceResource(Resource):
                     'first_name': owner.first_name,
                     'last_name': owner.last_name,
                     'email': owner.email
-                },
+                } if owner else None,
                 'amenities': [
                     {
                         'id': amenity.id,
@@ -170,7 +179,11 @@ class PlaceResource(Resource):
     @jwt_required()
     def put(self, place_id):
         """Update a place's information"""
-        current_user = get_jwt_identity()
+        current_user_id = get_jwt_identity()
+        place = facade.get_place(place_id)
+        if place is None:
+            return {'error': 'Place not found.'}, 404
+
         place_data = api.payload
         for key in place_data:
             if key not in ['title',
@@ -178,12 +191,29 @@ class PlaceResource(Resource):
                            'description',
                            'latitude',
                            'longitude',
-                           'owner_id']:
-                return {'error': 'Invalid input data.'}, 400
+                           'owner_id',
+                           'amenities',
+                           'reviews']:
+                return {'error': f"Invalid input data: '{key}' is not allowed."}, 400
+
+        # Remove 'reviews' from place_data before update to avoid SQLAlchemy error
+        if 'reviews' in place_data:
+            del place_data['reviews']
+
+        # Convert amenities dicts to Amenity instances if present
+        if place_data.get('amenities'):
+            amenity_instances = []
+            for amenity in place_data.get('amenities'):
+                amenity_instance = facade.get_amenity(amenity['id'])
+                if amenity_instance is None:
+                    return {'error': 'Invalid amenity ID.'}, 400
+                amenity_instances.append(amenity_instance)
+            place_data['amenities'] = amenity_instances
 
         # Trust no one
-        if current_user.get('is_admin') is True:
-            is_admin = facade.get_user(current_user['id']).is_admin
+        claims = get_jwt()
+        if claims.get('is_admin') is True:
+            is_admin = facade.get_user(current_user_id).is_admin
             if not is_admin:
                 return {'error': 'Admin privileges required.'}, 403
         else:
@@ -191,14 +221,11 @@ class PlaceResource(Resource):
             if user is None:
                 return {'error': 'Invalid owner_id.'}, 400
 
-            is_admin = facade.get_user(current_user['id']).is_admin
-            if not is_admin and current_user['id'] != user.id:
+            is_admin = facade.get_user(current_user_id).is_admin
+            if not is_admin and current_user_id != user.id:
                 return {'error': 'Unauthorized action.'}, 403
 
-            if facade.get_place(place_id) is None:
-                return {'error': 'Place not found.'}, 404
-
-            if place_data is facade.get_place(place_id):
+            if place_data is place:
                 return {'error': 'Invalid input data.'}, 400
 
             if place_data.get('amenities'):
@@ -218,22 +245,14 @@ class PlaceResource(Resource):
     @jwt_required()
     def delete(self, place_id):
         """Delete a place"""
-        # Trust no one
-        current_user = get_jwt_identity()
-        if current_user.get('is_admin') is True:
-            is_admin = facade.get_user(current_user['id']).is_admin
-            if not is_admin:
-                return {'error': 'Admin privileges required.'}, 403
-        else:
+        user_id = get_jwt_identity()
+        user = facade.get_user(user_id)
+        if not user or not user.is_admin:
             return {'error': 'Admin privileges required.'}, 403
 
         place = facade.get_place(place_id)
         if place is None:
             return {'error': 'Place not found.'}, 404
-
-        owner = facade.get_user(place.owner_id)
-        if current_user['id'] != owner.id:
-            return {'error': 'Unauthorized action.'}, 403
 
         facade.delete_place(place_id)
         return {'message': 'Place successfully deleted.'}, 200
