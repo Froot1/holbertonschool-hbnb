@@ -1,0 +1,38 @@
+/* 
+  This is a SAMPLE File to get you started. Follow the instructions on the project to complete the tasks. 
+  You'll probably need to override some of theese styles.
+*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #F2E7C9;
+    color: #722F37;
+    padding: 1.2rem 2rem;
+}
+
+nav a {
+    color: #722F37;
+    text-decoration: none;
+    margin-left: 1.5rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #F2E7C9;
+    color: #722F37;
+    padding: 1.2rem 2rem;
+}
