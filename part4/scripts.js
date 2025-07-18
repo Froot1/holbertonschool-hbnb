@@ -106,7 +106,7 @@ function getCookie(name) {
       body: JSON.stringify({
         place_id: placeId,
         text: reviewText,
-        rating: 5, // hardcoded, can be changed to dynamic later
+        rating: 5, 
         user_id: JSON.parse(atob(token.split('.')[1])).sub // extract from JWT
       })
     });
