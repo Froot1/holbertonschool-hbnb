@@ -9,7 +9,7 @@
     --bg-color: #111;
     --white: #fff;
     --border-color: #2196f3;
-    normal-shadow: 0 0 16px 2px #2196f3, 0 4px 6px rgba(0,0,0,0.3);
+    --shadow: 0 0 16px 2px #2196f3, 0 4px 6px rgba(0,0,0,0.3);
     --border-radius: 5px;
     
 }
