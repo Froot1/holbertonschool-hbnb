@@ -26,6 +26,7 @@ Enhanced Backend with Authentication and Database Integration.
 
 ## :four: Part 4
 
+Simple Web Client
 
 
 ## :black_nib: Authors
