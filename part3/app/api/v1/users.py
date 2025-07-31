@@ -32,7 +32,7 @@ class UserList(Resource):
     @api.response(200, 'User successfully created')
     @api.response(400, 'Email already registered')
     @api.response(403, 'Admin privileges required')
-    # @jwt_required()
+    @jwt_required()
     def post(self):
         """Register a new user"""
         # Trust no one
