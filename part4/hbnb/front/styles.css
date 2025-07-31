@@ -1,0 +1,298 @@
+/* Variables */
+:root {
+    --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.5;
+    --primary-color: #2196f3;
+    --hover-color: #00c3ff;
+    --text-color: #fff;
+    --bg-color: #111;
+    --white: #fff;
+    --border-color: #2196f3;
+    normal-shadow: 0 0 16px 2px #2196f3, 0 4px 6px rgba(0,0,0,0.3);
+    --border-radius: 5px;
+    
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Add typography optimization for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    color: #00c3ff;
+    text-shadow: 0 0 8px #00c3ff, 0 0 16px #0e0f0f;
+}
+
+/* Optimize paragraph text */
+p {
+    margin-bottom: 1rem;
+}
+
+/* Common styles */
+button, .login-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    width: 100%;
+    box-shadow: var(normal-shadow);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:hover,
+.login-button:hover {
+    background-color: var(--hover-color);
+    border-color: var(--hover-color);
+    box-shadow: 0 0 16px 4px #00c3ff, 0 0 32px 8px #2196f3;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(33,150,243,0.3);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(4px);
+}
+
+header .logo img {
+    height: 40px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: var(--text-color);
+    margin-left: 1rem;
+}
+
+/* Main content */
+main {
+    margin-top: 80px;
+    padding: 2rem;
+}
+
+main h1, main h2 {
+    margin-bottom: 1rem;
+}
+
+main h1 {
+    text-align: center;
+}
+
+/* Filters */
+#filter {
+    font-weight: bold;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Input styles */
+#price-filter,
+form input,
+form select,
+form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    background: rgba(0,0,0,0.3);
+    color: var(--text-color);
+    box-shadow: var(normal-shadow);
+    backdrop-filter: blur(2px);
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+/* Ensure email and password fields have the same style */
+input[type="email"], input[type="password"] {
+    background: rgba(0,0,0,0.3) !important;
+    color: var(--text-color) !important;
+    border: 2px solid var(--primary-color) !important;
+    box-shadow: var(normal-shadow) !important;
+    backdrop-filter: blur(2px);
+}
+
+select#price-filter {
+    max-width: 65px;
+}
+
+form textarea {
+    resize: none;
+    height: 100px;
+    width: 100%;
+}
+
+/* Places list */
+#places-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.place-card {
+    background-color: #181818;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: var(normal-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.2s;
+    color: var(--text-color);
+}
+
+.place-card:hover {
+    transform: translateY(-5px);
+}
+
+.place-info {
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.details-button {
+    width: 65%;
+    margin: 10px auto;
+    display: block;
+}
+
+/* Place details */
+.details-card {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+    background: rgba(0,0,0,0.5);
+    color: var(--text-color);
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    box-shadow: var(normal-shadow);
+    backdrop-filter: blur(2px);
+}
+
+/* Forms */
+form {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px;
+    background: rgba(0,0,0,0.5);
+    color: var(--text-color);
+    border-radius: 10px;
+    border: 2px solid var(--primary-color);
+    box-shadow: var(normal-shadow);
+    backdrop-filter: blur(2px);
+}
+
+/* Centered box for all main content */
+.centered-box {
+    margin: 60px auto 40px auto;
+    padding: 40px 30px;
+    max-width: 500px;
+    background: #000;
+    color: #fff;
+    border: 3px solid #114cff;
+    border-radius: 16px;
+    box-shadow: 0 0 24px 2px #114cff, 0 4px 16px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Reviews */
+.review-card {
+    margin: 20px;
+    padding: 10px;
+    background: rgba(0,0,0,0.5);
+    color: var(--text-color);
+    box-shadow: var(normal-shadow);
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+}
+
+.star-rating {
+    color: #ffd700;
+    font-size: 1.2em;
+    text-shadow: 0 0 6px #ffd700, 0 0 12px #1d1c0f;
+}
+
+/* Messages */
+.success-message,
+.error-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid rgba(33,150,243,0.3);
+    background: rgba(0,0,0,0.2);
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    color: #fff;
+    backdrop-filter: blur(4px);
+}
