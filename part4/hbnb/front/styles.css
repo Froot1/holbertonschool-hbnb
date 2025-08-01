@@ -43,8 +43,8 @@ h6 {
     font-family: var(--font-primary);
     line-height: 1.2;
     margin-bottom: 0.5em;
-    color: #00c3ff;
-    text-shadow: 0 0 8px #00c3ff, 0 0 16px #0e0f0f;
+    color: #006aff;
+    text-shadow: 0 0 8px #006aff, 0 0 16px #0e0f0f;
 }
 
 /* Optimize paragraph text */
@@ -61,7 +61,7 @@ button, .login-button {
     border-radius: var(--border-radius);
     cursor: pointer;
     width: 100%;
-    box-shadow: var(normal-shadow);
+    box-shadow: var(--shadow);
     transition: background 0.2s, box-shadow 0.2s;
 }
 
@@ -69,7 +69,7 @@ button:hover,
 .login-button:hover {
     background-color: var(--hover-color);
     border-color: var(--hover-color);
-    box-shadow: 0 0 16px 4px #00c3ff, 0 0 32px 8px #2196f3;
+    box-shadow: 0 0 16px 4px #0061fc, 0 0 32px 8px #013fa2;
 }
 
 /* Header & Navigation */
@@ -137,7 +137,7 @@ form textarea {
     border-radius: var(--border-radius);
     background: rgba(0,0,0,0.3);
     color: var(--text-color);
-    box-shadow: var(normal-shadow);
+    box-shadow: var(--shadow);
     backdrop-filter: blur(2px);
     transition: border 0.2s, box-shadow 0.2s;
 }
@@ -153,6 +153,7 @@ input[type="email"], input[type="password"] {
 
 select#price-filter {
     max-width: 65px;
+    height: 20px;
 }
 
 form textarea {
@@ -179,7 +180,7 @@ form textarea {
     border: 2px solid var(--primary-color);
     border-radius: 10px;
     width: 300px;
-    box-shadow: var(normal-shadow);
+    box-shadow: var(--shadow);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.2s;
     color: var(--text-color);
@@ -210,7 +211,7 @@ form textarea {
     color: var(--text-color);
     border-radius: 10px;
     border: 2px solid var(--primary-color);
-    box-shadow: var(normal-shadow);
+    box-shadow: var(--shadow);
     backdrop-filter: blur(2px);
 }
 
@@ -258,7 +259,7 @@ form label {
     padding: 10px;
     background: rgba(0,0,0,0.5);
     color: var(--text-color);
-    box-shadow: var(normal-shadow);
+    box-shadow: var(--shadow);
     border: 2px solid var(--primary-color);
     border-radius: 10px;
     backdrop-filter: blur(2px);
